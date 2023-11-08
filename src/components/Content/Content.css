@@ -1,0 +1,21 @@
+.content img {
+    width: 845px;
+    height: 450px;
+
+}
+.creator-profile img{
+    
+    width: 60px;
+    height: 60px;
+
+}
+.creator-profile{
+    display: flex;
+    align-items: center;
+    
+}
+.publisher{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}

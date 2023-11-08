@@ -1,0 +1,15 @@
+.blog-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    
+}
+.bookmark-container{
+    border-radius: 8px;
+    background: rgba(17, 17, 17, 0.05);
+    margin: 20px;
+    margin-bottom: auto
+}
+.content-container{
+    margin-top: 20px;
+}
+

@@ -9,10 +9,8 @@ const Header = () => {
             <div>
                 <h1>Cafe Intellectual</h1>
             </div>
-            <img src={proPic} alt="" />
-
+            <img src={proPic} alt="" />    
         </nav>
-
     );
 };
 

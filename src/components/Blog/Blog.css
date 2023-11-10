@@ -6,8 +6,8 @@
 .bookmark-container{
     border-radius: 8px;
     background: rgba(17, 17, 17, 0.05);
-    margin: 20px;
-    margin-bottom: auto
+    margin-bottom: auto;
+    margin-top: 50px;
 }
 .content-container{
     margin-top: 20px;

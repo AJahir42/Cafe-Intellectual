@@ -6,6 +6,8 @@ import './Blog.css'
 const Blog = () => {
 
     const [contents,setcontents]=useState([])
+    const [duration,setDuration]=useState(0)
+    
 
     useEffect(()=>{
         fetch('contents.json')
@@ -13,13 +15,25 @@ const Blog = () => {
         .then(data=>setcontents(data))
     },[])
 
+    // showing total readtime in UI
+    const handleAddToTime=(time)=>{
+
+        const totalDuration=duration+parseFloat(time);
+        setDuration(totalDuration);
+     
+    }
+
     return (
         <div className='blog-container'> 
             <div className='content-container'>
-                {contents.map(content=><Content content={content}></Content>)}
+                {contents.map(content=><Content 
+                key={content.id}
+                content={content}
+                handleAddToTime={handleAddToTime}
+                ></Content>)}
             </div>
             <div className='bookmark-container'>
-                <Bookmark></Bookmark>
+                <Bookmark duration={duration}></Bookmark>
             </div>
         </div>
     );

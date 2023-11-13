@@ -6,6 +6,7 @@ import './Content.css'
 
 const Content = (props) => {
     const handleAddToTime=props.handleAddToTime;
+    const handleAddToBookmark=props.handleAddToBookmark;
     const {name, picture, title, user_img, time, publish_date}=props.content;
 
     return (
@@ -21,7 +22,7 @@ const Content = (props) => {
                 </div>
             </div>
             <div>
-                <p>{time} min read<button><FontAwesomeIcon icon={faBookmark} /></button></p>
+                <p>{time} min read<button onClick={()=>handleAddToBookmark(props.content)}><FontAwesomeIcon icon={faBookmark} /></button></p>
             </div>
         </div>
         <h2>{title}</h2>

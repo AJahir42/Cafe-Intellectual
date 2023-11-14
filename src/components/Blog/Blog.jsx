@@ -3,6 +3,7 @@ import Content from '../Content/Content';
 import Bookmark from '../Bookmark/Bookmark';
 import {addToDb,getBookmarks} from '../../utilities/fakeDb'
 import './Blog.css'
+import Readtime from '../Readtime/Readtime';
 
 const Blog = () => {
 
@@ -39,7 +40,7 @@ const Blog = () => {
         }
         setBlogs(newBlogs)
     }
-
+    // console.log(blogs)
 
     return (
         <div className='blog-container'> 
@@ -52,7 +53,9 @@ const Blog = () => {
                 ></Content>)}
             </div>
             <div className='bookmark-container'>
-                <Bookmark duration={duration}></Bookmark>
+                <Readtime duration={duration}></Readtime>
+                {blogs.map(blog=><Bookmark blog={blog}></Bookmark>)}
+                
             </div>
         </div>
     );

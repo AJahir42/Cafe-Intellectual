@@ -2,13 +2,13 @@ import React from 'react';
 import './Bookmark.css'
 
 const Bookmark = (props) => {
-    const {duration}=props
-    
+
+    const {title}=props.blog;
     return (
         <div className='bookmark'>
-            <button>Spent time on read:{duration} min</button>
-            <h3>Bookmarked Blogs</h3>
-            <h5>Hi babyyyyyy</h5>
+            
+           
+            <h5>{title}</h5>
 
         </div>
     );

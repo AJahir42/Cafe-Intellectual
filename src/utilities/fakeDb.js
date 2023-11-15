@@ -1,7 +1,8 @@
 
-const addToDb = id => {
+const addToDb = (id,title) => {
     let bookmarkedBlogs = getBookmarks();
     // add bookmark
+    bookmarkedBlogs[id]=title
 
     localStorage.setItem('blogs', JSON.stringify(bookmarkedBlogs));
 }

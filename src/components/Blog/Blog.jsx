@@ -26,6 +26,19 @@ const Blog = () => {
         setDuration(totalDuration);
     }
 
+    useEffect(()=>{
+        const storedBookmark=getBookmarks();
+        const savedBookmark=[];
+
+        for(const id in storedBookmark){
+            const addedBookmark=contents.find(content=>content.id===id);
+            if(addedBookmark){
+                savedBookmark.push(addedBookmark)
+            }
+        }
+        setBlogs(savedBookmark)
+    },[contents])
+
 
     const handleAddToBookmark=(blog)=>{
 
@@ -39,6 +52,8 @@ const Blog = () => {
             newBlogs=[...remaining,exists]
         }
         setBlogs(newBlogs)
+
+        addToDb(blog.id,blog.title)
     }
     // console.log(blogs)
 
@@ -54,7 +69,7 @@ const Blog = () => {
             </div>
             <div className='bookmark-container'>
                 <Readtime duration={duration}></Readtime>
-                {blogs.map(blog=><Bookmark blog={blog}></Bookmark>)}
+                {blogs.map(blog=><Bookmark key={blog.id} blog={blog}></Bookmark>)}
                 
             </div>
         </div>
